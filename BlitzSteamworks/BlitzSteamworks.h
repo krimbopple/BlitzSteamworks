@@ -128,7 +128,7 @@ BS_API(int) GetSenderIDLower();
 BS_API(int) LoadPacket();
 
 // Sends a packet to a specified Steam ID, returns if a packet has begun to send successfully
-BS_API(int) SendPacketToUser(int upperID, int lowerID);
+BS_API(int) SendPacketToUser(int upperID, int lowerID, int reliable);
 
 // Same as above but.... reliable as expected
 BS_API(int) SendPacketToUserReliable(int upperID, int lowerID);
