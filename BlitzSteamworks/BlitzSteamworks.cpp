@@ -230,7 +230,7 @@ BS_API(int) LoadPacket() {
 }
 
 BS_API(int) SendPacketToUser(int upperID, int lowerID, int reliable) {
-    int sendFlags = reliable ? k_EP2PSendReliable : k_EP2PSendUnreliable;
+    EP2PSend sendFlags = reliable ? k_EP2PSendReliable : k_EP2PSendUnreliable;
     bool b = SteamNetworking()->SendP2PPacket(idMerge(upperID, lowerID), p2poutput.data(), p2poutput.size(), sendFlags);
     p2poutput.clear();
     return b ? 1 : 0;
