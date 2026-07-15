@@ -236,12 +236,6 @@ BS_API(int) SendPacketToUser(int upperID, int lowerID, int reliable) {
     return b ? 1 : 0;
 }
 
-BS_API(int) SendPacketToUserReliable(int upperID, int lowerID) {
-	bool b = SteamNetworking()->SendP2PPacket(idMerge(upperID, lowerID), p2poutput.data(), p2poutput.size(), k_EP2PSendReliable);
-	p2poutput.clear();
-	return b ? 1 : 0;
-}
-
 BS_API(int) CloseConnection(int upperID, int lowerID) {
 	return SteamNetworking()->CloseP2PSessionWithUser(idMerge(upperID, lowerID));
 }
